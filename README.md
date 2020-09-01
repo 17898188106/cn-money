@@ -1,2 +1,0 @@
-# cn-money
-uniapp components
