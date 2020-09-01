@@ -80,4 +80,4 @@ rmb	 			|Boolean	|false		|	是否转换为人民币大写
 
 ### 插件预览地址
 
-[https://fyb.cdwzit.com/jd/index.html](京帮帮商城)
+[京帮帮商城](https://fyb.cdwzit.com/jd/index.html)
