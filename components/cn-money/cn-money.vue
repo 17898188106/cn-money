@@ -5,9 +5,10 @@
 			<text class="cn-money-text">{{ rmbText }}</text>
 		</view>
 		<view v-else>
-			<text class="cn-money-unit" v-if="showUnit">{{ unit }}</text>
+			<text class="cn-money-unit" v-if="showUnit && unitPosition=='left'">{{ unit }}</text>
 			<text class="cn-money-text">{{ moneyData }}</text>
 			<text class="cn-money-decimal" v-if="showZeroDecimal || decimalData!='00'">.{{ decimalData }}</text>
+			<text class="cn-money-unit" v-if="showUnit && unitPosition=='right'">{{ unitText }}</text>
 		</view>
 	</view>
 </template>
@@ -46,6 +47,10 @@ export default {
 			type: Boolean,
 			default: true
 		},
+		unitPosition: {
+			type: String,
+			default: 'left'	// right
+		},
 		showZeroDecimal: {
 			type: Boolean,
 			default: true
@@ -67,6 +72,7 @@ export default {
 		return {
 			moneyData: '0',
 			decimalData: '00',
+			unitText: '元',
 			rmbUnit: '人民币',
 			rmbText: ''
 		};
@@ -78,14 +84,20 @@ export default {
 		unit(val){
 			if('$'==val){
 				this.rmbUnit = '美金';
+				this.unitText = '美元';
 			}else if('£'==val){
 				this.rmbUnit = '英镑';
+				this.unitText = '镑';
 			}else if('€'==val){
 				this.rmbUnit = '欧元';
+				this.unitText = '欧元';
 			}else if('₩'==val){
 				this.rmbUnit = '韩元';
+				this.unitText = '韩元';
 			}else{
 				this.rmbUnit = '人民币';
+				
+				this.unitText = '元';
 			}
 		}
 	},
@@ -155,7 +167,7 @@ export default {
 /* color start*/
 .cn-money-box {
 	box-sizing: border-box;
-	font-family: 'moneyFont', 'Microsoft Yahei';
+	font-family: moneyFont, "Microsoft Yahei","Helvetica Neue",Helvetica,Arial,sans-serif;
 	display: inline-flex;
 	align-items: flex-end;
 	justify-items: flex-end;
