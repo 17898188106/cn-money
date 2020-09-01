@@ -147,7 +147,7 @@ export default {
 /* font start */
 @font-face {
 	font-family: 'moneyFont';
-	src: url('~@/static/cn-money/cn-money.ttf') format('truetype');
+	src: url('./cn-money.ttf') format('truetype');
 	font-weight: normal;
 	font-style: normal;
 }
