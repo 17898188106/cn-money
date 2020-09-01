@@ -46,6 +46,11 @@
 					<cn-money :money="168.52" :size="38" :showUnit="false"></cn-money>
 				</template>
 			</uni-list-item>
+			<uni-list-item title="单位在金额后">
+				<template slot="footer">
+					<cn-money :money="52013.14" thousandth unitPosition="right"></cn-money>
+				</template>
+			</uni-list-item>
 			<uni-list-item title="人民币(¥168.39)">
 				<template slot="footer">
 					<cn-money :money="168.39" rmb></cn-money>
@@ -54,6 +59,11 @@
 			<uni-list-item title="人民币(¥502.00)">
 				<template slot="footer">
 					<cn-money :money="502.00" rmb></cn-money>
+				</template>
+			</uni-list-item>
+			<uni-list-item title="人民币无单位(5002.13)">
+				<template slot="footer">
+					<cn-money :money="5002.13" rmb :showUnit="false"></cn-money>
 				</template>
 			</uni-list-item>
 		</uni-list>
