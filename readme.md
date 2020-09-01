@@ -67,6 +67,7 @@ size			|Number		|28			|	主文字大小，单位rpx
 color  			|String 	|#e41f19 	|	字体颜色
 unit			|String		|¥			|	金额单位	
 showUnit		|Boolean	|true		|	是否显示金额单位
+unitPosition	|String		|left		|	单位显示位置，left或right，只有showUnit为true时有效，right的时候¥自动转为元
 showZeroDecimal	|Boolean	|true		|	金额小数为零时是否显示
 thousandth		|Boolean	|false		|	是否显示千分位
 original		|Boolean	|false		|	是否显示删除线	
